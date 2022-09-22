@@ -1,0 +1,19 @@
+package basic;
+
+class value{
+	int i=10;
+	public void change() {
+		i++;
+		System.out.println("i = "+i);
+	}
+}
+class valueCalling extends value{
+	public void change() {
+		System.out.println("change inside calling class");
+	}
+}
+public class FinalKeyword {
+	public static void main(String[] args) {
+		
+	}
+}

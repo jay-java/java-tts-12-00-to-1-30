@@ -1,0 +1,10 @@
+package basic;
+
+class value{
+	
+}
+public class FinalKeyword {
+	public static void main(String[] args) {
+		
+	}
+}

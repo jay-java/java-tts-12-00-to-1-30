@@ -1,0 +1,16 @@
+package basic;
+interface inter1{
+	
+}
+interface inter2 extends inter1{
+	
+}
+interface inter3{
+	
+}
+class call{
+	
+}
+public class InterfaceDemo {
+
+}

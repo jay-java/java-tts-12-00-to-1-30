@@ -1,0 +1,13 @@
+package basic;
+
+class dataa{
+	int id;
+	String name;
+	static String cname;
+	
+}
+public class StaticKeyword {
+	public static void main(String[] args) {
+		
+	}
+}
