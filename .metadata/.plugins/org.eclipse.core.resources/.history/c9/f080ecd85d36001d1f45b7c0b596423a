@@ -1,0 +1,14 @@
+package basic;
+class Member{
+	int id;
+	String name;
+	String address;
+	Member(int id,String name,String address){
+		this.id=id;
+	}
+}
+public class Encapsulation {
+	public static void main(String[] args) {
+		
+	}
+}

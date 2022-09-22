@@ -1,0 +1,14 @@
+package basic;
+
+//to access property of one class to another class
+class Parent{
+	
+}
+class Child{
+	
+}
+public class InheritanceDemo {
+	public static void main(String[] args) {
+		
+	}
+}

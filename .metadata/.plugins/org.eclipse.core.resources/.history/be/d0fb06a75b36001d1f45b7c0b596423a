@@ -1,0 +1,16 @@
+package basic;
+
+class RBI{
+	
+}
+class SBI extends RBI{
+	
+}
+class PNB extends RBI{
+	
+}
+public class AbstractionDemo {
+	public static void main(String[] args) {
+		
+	}
+}

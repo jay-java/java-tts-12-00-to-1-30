@@ -1,0 +1,16 @@
+package basic;
+
+class Paren{
+	
+}
+class Child1{
+	
+}
+class Child2{
+	
+}
+public class HierarchicalInheritance {
+	public static void main(String[] args) {
+		
+	}
+}

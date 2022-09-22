@@ -1,0 +1,18 @@
+package basic;
+
+//to access property of one class to another class
+class Parent{
+	public void parentMethod() {
+		System.out.println("this is parent class");
+	}
+}
+class Child extends Parent{
+	public void childMethod() {
+		System.out.println("this is child class");
+	}
+}
+public class InheritanceDemo {
+	public static void main(String[] args) {
+		
+	}
+}

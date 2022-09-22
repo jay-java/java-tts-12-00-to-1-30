@@ -1,0 +1,8 @@
+package basic;
+//method name same but having different functionalities ->Polymorphism
+//Types of Poly
+//1.Compile time->Method Overloading
+//2.Runtime -> Method Overriding
+public class Polymorphism {
+	
+}

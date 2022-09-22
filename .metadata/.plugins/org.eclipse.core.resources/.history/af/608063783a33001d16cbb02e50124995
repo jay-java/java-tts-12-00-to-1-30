@@ -1,0 +1,10 @@
+package basic;
+
+public class ArrayDemo {
+	public static void main(String[] args) {
+		int i[] = {10,20,30,40,50};
+		for(int index=0;index<=4;index++) {
+			System.out.println("value at i["+index+"] is : "+i[index]);
+		}
+	}
+}

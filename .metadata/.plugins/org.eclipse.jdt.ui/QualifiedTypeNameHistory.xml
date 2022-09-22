@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="basic.Child"/>
+    <fullyQualifiedTypeName name="java.security.KeyStore.PrivateKeyEntry"/>
+    <fullyQualifiedTypeName name="basic.Parent"/>
+    <fullyQualifiedTypeName name="basic.grandChild"/>
+    <fullyQualifiedTypeName name="basic.Child1"/>
+    <fullyQualifiedTypeName name="basic.Child2"/>
+    <fullyQualifiedTypeName name="basic.Employee"/>
+    <fullyQualifiedTypeName name="basic.Data"/>
+    <fullyQualifiedTypeName name="basic.Student"/>
+    <fullyQualifiedTypeName name="basic.Circle"/>
+    <fullyQualifiedTypeName name="basic.SBI"/>
+    <fullyQualifiedTypeName name="basic.PNB"/>
+    <fullyQualifiedTypeName name="basic.JAVA"/>
+    <fullyQualifiedTypeName name="basic.Member"/>
+</qualifiedTypeNameHistroy>

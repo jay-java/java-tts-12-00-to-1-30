@@ -1,0 +1,16 @@
+package basic;
+class Square{
+	public void draw() {
+		System.out.println("this is square class");
+	}
+}
+class Square{
+	public void draw() {
+		System.out.println("this is square class");
+	}
+}
+public class Override {
+	public static void main(String[] args) {
+		
+	}
+}

@@ -1,0 +1,7 @@
+package basic;
+//method name same but having different functionalities ->Polymorphism
+//Types of Poly
+
+public class Polymorphism {
+
+}

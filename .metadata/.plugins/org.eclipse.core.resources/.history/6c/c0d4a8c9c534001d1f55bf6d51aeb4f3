@@ -1,0 +1,8 @@
+package basic;
+
+//to access property of one class to anohter class
+public class InheritanceDemo {
+	public static void main(String[] args) {
+		
+	}
+}

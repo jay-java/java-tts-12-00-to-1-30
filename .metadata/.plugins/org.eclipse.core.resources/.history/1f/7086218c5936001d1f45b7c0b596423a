@@ -1,0 +1,13 @@
+package basic;
+//method name same but having different functionalities ->Polymorphism
+//Types of Poly
+//1.Compile time->Method Overloading
+//2.Runtime -> Method Overriding
+class Student{
+	
+}
+public class Polymorphism {
+	public static void main(String[] args) {
+		
+	}
+}

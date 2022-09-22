@@ -1,0 +1,15 @@
+package basic;
+
+class Employee{
+	int id;
+	String name;
+	double salary;
+	public void show() {
+		System.out.println("id : "+id+" name : "+name+" salary : "+salary);
+	}
+}
+public class ConstructorDemo {
+	public static void main(String[] args) {
+		
+	}
+}

@@ -1,0 +1,22 @@
+package basic;
+
+class Paren{
+	public void parentMethod() {
+		System.out.println("this is parent class");
+	}
+}
+class Child1 extends Paren{
+	public void child1Method() {
+		System.out.println("this is child 1 class");
+	}
+}
+class Child2{
+	public void child2Method() {
+		System.out.println("this is child 2 class");
+	}
+}
+public class HierarchicalInheritance {
+	public static void main(String[] args) {
+		
+	}
+}
