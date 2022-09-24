@@ -1,0 +1,7 @@
+package basic;
+
+public class SerializationDemo {
+	public static void main(String[] args) {
+		
+	}
+}

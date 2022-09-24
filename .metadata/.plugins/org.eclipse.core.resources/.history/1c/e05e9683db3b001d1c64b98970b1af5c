@@ -1,0 +1,28 @@
+package basic;
+
+import java.io.FileOutputStream;
+
+class StudntData {
+	int id;
+	String name;
+	float per;
+
+	public StudntData(int id, String name, float per) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.per = per;
+	}
+
+	public String toString() {
+		return "StudntData [id=" + id + ", name=" + name + ", per=" + per + "]";
+	}
+}
+
+public class SerializationDemo {
+	public static void main(String[] args) {
+		StudntData s1 = new StudntData(1, "jeel", 67.7f);
+		
+		FileOutputStream fos = new FileOutputStream("student.txt");
+	}
+}

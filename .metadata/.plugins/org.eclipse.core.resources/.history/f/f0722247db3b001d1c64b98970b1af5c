@@ -1,0 +1,10 @@
+package basic;
+
+class StudntData{
+	
+}
+public class SerializationDemo {
+	public static void main(String[] args) {
+		
+	}
+}

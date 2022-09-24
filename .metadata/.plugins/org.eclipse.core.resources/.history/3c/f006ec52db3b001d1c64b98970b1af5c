@@ -1,0 +1,23 @@
+package basic;
+
+class StudntData{
+	int id;
+	String name;
+	float per;
+	public StudntData(int id, String name, float per) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.per = per;
+	}
+	@Override
+	public String toString() {
+		return "StudntData [id=" + id + ", name=" + name + ", per=" + per + "]";
+	}
+	
+}
+public class SerializationDemo {
+	public static void main(String[] args) {
+		
+	}
+}
