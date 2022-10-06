@@ -1,0 +1,13 @@
+package basic;
+
+class Dataa{
+	int id;
+	String name;
+	double sal;
+}
+
+public class ListPractical {
+	public static void main(String[] args) {
+		
+	}
+}

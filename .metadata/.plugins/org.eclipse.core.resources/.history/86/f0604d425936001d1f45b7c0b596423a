@@ -1,6 +1,0 @@
-package basic;
-//method name same but having different functionalities ->Polymorphism
-
-public class Polymorphism {
-
-}

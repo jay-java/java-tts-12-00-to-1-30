@@ -1,0 +1,16 @@
+package basic;
+
+import java.util.TreeSet;
+
+public class TreeSetdemo {
+	public static void main(String[] args) {
+		TreeSet set = new TreeSet();
+		set.add(12);
+		set.add("name");
+		set.add('g');
+		set.add(5464);
+		set.add(465.5);
+		set.add(12);
+		System.out.println(set);
+	}
+}

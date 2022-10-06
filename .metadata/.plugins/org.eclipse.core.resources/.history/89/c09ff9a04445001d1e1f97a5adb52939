@@ -1,0 +1,6 @@
+package basic;
+
+public class ListPractical {
+	public static void main(String[] args) {
+	}
+}

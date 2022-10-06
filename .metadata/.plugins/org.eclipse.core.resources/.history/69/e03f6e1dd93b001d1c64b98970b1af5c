@@ -1,7 +1,0 @@
-package basic;
-
-public class FileINputOutputStream {
-	public static void main(String[] args) {
-		
-	}
-}

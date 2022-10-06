@@ -1,0 +1,11 @@
+package basic;
+
+class Dataa{
+	
+}
+
+public class ListPractical {
+	public static void main(String[] args) {
+		
+	}
+}
