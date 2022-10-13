@@ -1,9 +1,0 @@
-package basic;
-
-import java.util.Vector;
-
-public class VectoreDemo {
-	public static void main(String[] args) {
-		Vector vr =new Vector();
-	}
-}
