@@ -98,4 +98,20 @@ public class ServicemanDao {
 			e.printStackTrace();
 		}
 	}
+	public static boolean checkEmail(String email) {
+		boolean flag = false;
+		try {
+			Connection conn = DBConnection.createConnection();
+			String sql = "select * from serviceman where email=?";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			pst.setString(1, email);
+			ResultSet rs = pst.executeQuery();
+			if(rs.next()) {
+				flag = true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return flag;
+	}
 }

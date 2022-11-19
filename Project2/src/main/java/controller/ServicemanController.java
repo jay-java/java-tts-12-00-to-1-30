@@ -1,6 +1,8 @@
 package controller;
 
 import java.io.IOException;
+import java.util.Random;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,6 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import dao.ServicemanDao;
 import model.ServiceMan;
+import services.Service;
 
 /**
  * Servlet implementation class ServicemanController
@@ -98,6 +101,24 @@ public class ServicemanController extends HttpServlet {
 			else {
 				request.setAttribute("msg1", "old password incoorect");
 				request.getRequestDispatcher("serviceman-change-password.jsp").forward(request, response);
+			}
+		}
+		else if(action.equalsIgnoreCase("get otp")) {
+			String email = request.getParameter("email");
+			boolean flag = ServicemanDao.checkEmail(email);
+			if(flag == true) {
+				Service s = new Service();
+				Random r = new Random();
+				int num = r.nextInt(9999);
+				System.out.println(num);
+				s.sendMail(email, num);
+				request.setAttribute("email", email);
+				request.setAttribute("otp", num);
+				request.getRequestDispatcher("serviceman-verify-otp.jsp").forward(request, response);
+			}
+			else {
+				request.setAttribute("msg", "Email id not registered");
+				request.getRequestDispatcher("serviceman-forgot-password.jsp").forward(request, response);
 			}
 		}
 	}
