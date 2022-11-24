@@ -3,6 +3,8 @@ package dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 import connection.DBConnection;
 import model.ServiceMan;
@@ -113,5 +115,28 @@ public class ServicemanDao {
 			e.printStackTrace();
 		}
 		return flag;
+	}
+	public static List<ServiceMan> getAllServiceMan(){
+		List<ServiceMan> list = new ArrayList<ServiceMan>();
+		try {
+			Connection conn = DBConnection.createConnection();
+			String sql = "select * from serviceman";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			ResultSet rs = pst.executeQuery();
+			while (rs.next()) {
+				ServiceMan s1 = new ServiceMan();
+				s1.setId(rs.getInt("id"));
+				s1.setName(rs.getString("name"));
+				s1.setContact(rs.getLong("contact"));
+				s1.setAddress(rs.getString("address"));
+				s1.setStype(rs.getString("stype"));
+				s1.setEmail(rs.getString("email"));
+				s1.setPassword(rs.getString("password"));
+				list.add(s1);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
 	}
 }

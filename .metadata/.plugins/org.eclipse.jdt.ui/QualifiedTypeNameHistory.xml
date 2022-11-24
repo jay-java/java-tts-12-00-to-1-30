@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="basic.Child2"/>
-    <fullyQualifiedTypeName name="basic.Employee"/>
-    <fullyQualifiedTypeName name="basic.Data"/>
-    <fullyQualifiedTypeName name="basic.Circle"/>
-    <fullyQualifiedTypeName name="basic.SBI"/>
     <fullyQualifiedTypeName name="basic.PNB"/>
     <fullyQualifiedTypeName name="basic.JAVA"/>
     <fullyQualifiedTypeName name="basic.Member"/>
@@ -54,10 +49,15 @@
     <fullyQualifiedTypeName name="java.sql.Connection"/>
     <fullyQualifiedTypeName name="connection.DBConnection"/>
     <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
-    <fullyQualifiedTypeName name="java.sql.ResultSet"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
     <fullyQualifiedTypeName name="java.lang.Integer"/>
     <fullyQualifiedTypeName name="model.ServiceMan"/>
     <fullyQualifiedTypeName name="com.mysql.cj.protocol.Resultset"/>
+    <fullyQualifiedTypeName name="java.sql.ResultSet"/>
     <fullyQualifiedTypeName name="dao.ServicemanDao"/>
+    <fullyQualifiedTypeName name="java.util.Properties"/>
+    <fullyQualifiedTypeName name="com.mysql.cj.Session"/>
+    <fullyQualifiedTypeName name="javax.mail.Service"/>
+    <fullyQualifiedTypeName name="services.Service"/>
+    <fullyQualifiedTypeName name="java.util.Random"/>
 </qualifiedTypeNameHistroy>

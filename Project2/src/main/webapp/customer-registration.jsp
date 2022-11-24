@@ -121,26 +121,26 @@
 			<div class="row">
 				<div class="col-lg-12 mb-2">
 					<div class="contact-form bg-light mb-4" style="padding: 30px;">
-						<form action="ServicemanController" method="post">
+						<form action="CustomerController" method="post">
 							<div class="form-group">
-								<input type="text" class="form-control p-4" placeholder="Name"
+								<input type="text" class="form-control p-4" placeholder="Name" name="name"
 									required="required">
 							</div>
 							<div class="form-group">
 								<input type="text" class="form-control p-4"
-									placeholder="Contact" required="required">
+									placeholder="Contact" name="contact" required="required">
 							</div>
 							<div class="form-group">
 								<input type="text" class="form-control p-4"
-									placeholder="Address" required="required">
+									placeholder="Address" name="address" required="required">
 							</div>
 							<div class="form-group">
-								<input type="email" class="form-control p-4" placeholder="Email"
-									required="required">
+								<input type="email" class="form-control p-4" name="email" placeholder="Email" 
+									required="required"> 
 							</div>
 							<div class="form-group">
 								<input type="password" class="form-control p-4"
-									placeholder="Password" required="required">
+									placeholder="Password" name="password" required="required">
 							</div>
 
 
