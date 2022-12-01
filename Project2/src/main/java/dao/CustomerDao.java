@@ -11,7 +11,7 @@ public class CustomerDao {
 	public static void insertCustomer(Customer c) {
 		try {
 			Connection con = DBConnection.createConnection();
-			String sql="insert into customer(name,contact,address,email,password) values(?,?,?,?,?)";
+			String sql = "insert into customer(name,contact,address,email,password) values(?,?,?,?,?)";
 			PreparedStatement pst = con.prepareStatement(sql);
 			pst.setString(1, c.getName());
 			pst.setLong(2, c.getContact());
@@ -24,17 +24,18 @@ public class CustomerDao {
 			e.printStackTrace();
 		}
 	}
+
 	public static Customer customerLogin(Customer c) {
 		System.out.println(c);
 		Customer c1 = null;
 		try {
 			Connection con = DBConnection.createConnection();
-			String sql="select * from customer where email=? and password=?";
+			String sql = "select * from customer where email=? and password=?";
 			PreparedStatement pst = con.prepareStatement(sql);
 			pst.setString(1, c.getEmail());
 			pst.setString(2, c.getPassword());
 			ResultSet rs = pst.executeQuery();
-			if(rs.next()) {
+			if (rs.next()) {
 				c1 = new Customer();
 				c1.setId(rs.getInt("id"));
 				c1.setName(rs.getString("name"));
@@ -49,4 +50,28 @@ public class CustomerDao {
 		}
 		return c1;
 	}
+
+	public static Customer getCustomerById(int id) {
+		Customer c1 = null;
+		try {
+			Connection con = DBConnection.createConnection();
+			String sql="select * from customer where id=?";
+			PreparedStatement pst = con.prepareStatement(sql);
+			pst.setInt(1, id);
+			ResultSet rs = pst.executeQuery();
+			if(rs.next()) {
+				c1 = new Customer();
+				c1.setId(rs.getInt("id"));
+				c1.setName(rs.getString("name"));
+				c1.setContact(rs.getLong("contact"));
+				c1.setAddress(rs.getString("address"));
+				c1.setEmail(rs.getString("email"));
+				c1.setPassword(rs.getString("password"));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return c1;
+		}
+
 }

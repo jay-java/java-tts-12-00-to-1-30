@@ -139,4 +139,27 @@ public class ServicemanDao {
 		}
 		return list;
 	}
+	public static ServiceMan getServicemanById(int id) {
+		ServiceMan s1 = null;
+		try {
+			Connection conn = DBConnection.createConnection();
+			String sql = "select * from serviceman where id=?";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			pst.setInt(1, id);
+			ResultSet rs = pst.executeQuery();
+			if (rs.next()) {
+				s1 = new ServiceMan();
+				s1.setId(rs.getInt("id"));
+				s1.setName(rs.getString("name"));
+				s1.setContact(rs.getLong("contact"));
+				s1.setAddress(rs.getString("address"));
+				s1.setStype(rs.getString("stype"));
+				s1.setEmail(rs.getString("email"));
+				s1.setPassword(rs.getString("password"));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return s1;
+	}
 }

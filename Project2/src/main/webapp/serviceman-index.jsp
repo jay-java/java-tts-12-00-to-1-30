@@ -92,7 +92,7 @@ else{
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Services</a>
                             <div class="dropdown-menu rounded-0 m-0">
-                                <a href="serviceman-registeration.jsp" class="dropdown-item">Pending</a>
+                                <a href="pending-services.jsp" class="dropdown-item">Pending</a>
                                 <a href="customer-registration.jsp" class="dropdown-item">Completed</a>
                             </div>
                         </div>
