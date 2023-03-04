@@ -97,7 +97,7 @@
 								data-toggle="dropdown">Services</a>
 							<div class="dropdown-menu rounded-0 m-0">
 								<a href="pending-services.jsp" class="dropdown-item">Pending</a>
-								<a href="customer-registration.jsp" class="dropdown-item">Completed</a>
+								<a href="completed-service.jsp" class="dropdown-item">Completed</a>
 							</div>
 						</div>
 						<div class="nav-item dropdown">
@@ -160,8 +160,11 @@
 			</div>
 
 			<div class="col-xl-2 col-lg-4 col-md-6 px-2">
-				<button class="btn btn-primary btn-block mb-3" type="submit"
-					style="height: 50px;">Confirm</button>
+				<form action="BookingController" method="post">
+					<input type="hidden" name="bid" value="<%=b.getBid()%>">
+					<button class="btn btn-primary btn-block mb-3" type="submit"
+						name="action" value="confirm" style="height: 50px;">Confirm</button>
+				</form>
 			</div>
 			<div class="col-xl-2 col-lg-4 col-md-6 px-2">
 				<button class="btn btn-primary btn-block mb-3" type="submit"

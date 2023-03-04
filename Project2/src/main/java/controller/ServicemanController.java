@@ -58,6 +58,7 @@ public class ServicemanController extends HttpServlet {
 			s.setEmail(request.getParameter("email"));
 			s.setPassword(request.getParameter("password"));
 			ServiceMan s1 = ServicemanDao.servicemanLogin(s);
+			System.out.println(s1);
 			if(s1==null) {
 				request.setAttribute("msg", "email or password is incorrect");
 				request.getRequestDispatcher("serviceman-login.jsp").forward(request, response);

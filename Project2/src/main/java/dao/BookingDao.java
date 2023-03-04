@@ -52,4 +52,40 @@ public class BookingDao {
 		}
 		return list;
 	}
+	public static void approveStatus(int bid) {
+		try {
+			Connection conn = DBConnection.createConnection();
+			String sql ="update book_services set status='approved' where bid=?";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			pst.setInt(1, bid);
+			pst.executeUpdate();
+			System.out.println("status approved");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public static List<BookService> approvedServicesBySid(int id){
+		List<BookService> list = new ArrayList<BookService>();
+		try {
+			Connection conn = DBConnection.createConnection();
+			String sql ="select * from book_services where status='approved' and sid=?";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			pst.setInt(1, id);
+			ResultSet rs = pst.executeQuery();
+			while(rs.next()) {
+				BookService b = new BookService();
+				b.setBid(rs.getInt("bid"));
+				b.setCid(rs.getInt("cid"));
+				b.setSid(rs.getInt("sid"));
+				b.setSname(rs.getString("sname"));
+				b.setSemail(rs.getString("semail"));
+				b.setStype(rs.getString("stype"));
+				b.setStatus(rs.getString("status"));
+				list.add(b);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
 }

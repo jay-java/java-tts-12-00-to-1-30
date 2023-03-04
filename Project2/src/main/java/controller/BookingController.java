@@ -49,7 +49,11 @@ public class BookingController extends HttpServlet {
 			BookingDao.bookService(b);
 			response.sendRedirect("customer-index.jsp");
 		}
-	
+		else if(action.equalsIgnoreCase("confirm")) {
+			int id = Integer.parseInt(request.getParameter("bid"));
+			BookingDao.approveStatus(id);
+			response.sendRedirect("pending-services.jsp");
+		}
 	}
 
 }

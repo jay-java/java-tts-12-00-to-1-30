@@ -121,20 +121,20 @@
 			<div class="row">
 				<div class="col-lg-12 mb-2">
 					<div class="contact-form bg-light mb-4" style="padding: 30px;">
-						<form action="ServicemanController" method="post">
+						<form action="AdminController" method="post">
 							<div class="form-group">
-								<input type="email" class="form-control p-4" placeholder="Email"
+								<input type="email" class="form-control p-4" name="email" placeholder="Email"
 									required="required">
 							</div>
 							<div class="form-group">
-								<input type="password" class="form-control p-4"
+								<input type="password" class="form-control p-4" name="password"
 									placeholder="Password" required="required">
 							</div>
 
 
 							<div class="text-center">
 								<button class="btn btn-primary py-3 px-5" type="submit"
-									name="action" value="register">Register</button>
+									name="action" value="login">Login</button>
 							</div>
 						</form>
 					</div>
