@@ -1,7 +1,3 @@
-<%@page import="dao.BookingDao"%>
-<%@page import="model.BookService"%>
-<%@page import="dao.CustomerDao"%>
-<%@page import="model.Customer"%>
 <%@page import="dao.ServicemanDao"%>
 <%@page import="model.ServiceMan"%>
 <%@page import="java.util.List"%>
@@ -25,7 +21,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 <script type="application/x-javascript">
 	
+	
 	 addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
+
 
 </script>
 
@@ -71,7 +69,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 </style>
 <!--pie-chart -->
 <!-- index page sales reviews visitors pie chart -->
-<script src="admin/js/pie-chart.js" type="text/javascript"></script>
+<script src="js/pie-chart.js" type="text/javascript"></script>
 <script type="text/javascript">
 	$(document).ready(
 			function() {
@@ -117,8 +115,8 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 <!-- index page sales reviews visitors pie chart -->
 
 <!-- requried-jsfiles-for owl -->
-<link href="admin/css/owl.carousel.css" rel="stylesheet">
-<script src="admin/js/owl.carousel.js"></script>
+<link href="css/owl.carousel.css" rel="stylesheet">
+<script src="js/owl.carousel.js"></script>
 <script>
 	$(document).ready(function() {
 		$("#owl-demo").owlCarousel({
@@ -169,8 +167,8 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 							<li class="treeview"><a href="admin-index.jsp"> <i
 									class="fa fa-dashboard"></i> <span>Dashboard</span>
 							</a></li>
-							<li class="treeview"><a href="admin-serviceman-list.jsp"> <i
-									class="fa fa-laptop"></i> <span>Service-Man</span> 
+							<li class="treeview"><a href="admin-serviceman-list.jsp">
+									<i class="fa fa-laptop"></i> <span>Service-Man</span>
 							</a>
 								<ul class="treeview-menu">
 									<li><a href="grids.html"><i class="fa fa-angle-right"></i>
@@ -178,8 +176,8 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 									<li><a href="media.html"><i class="fa fa-angle-right"></i>
 											Media Css</a></li>
 								</ul></li>
-							<li class="treeview"><a href="admin-customer-list.jsp"> <i
-									class="fa fa-pie-chart"></i> <span>Customers</span> 
+							<li class="treeview"><a href="admin-customer-list.jsp">
+									<i class="fa fa-pie-chart"></i> <span>Customers</span>
 							</a></li>
 							<li class="treeview">
 							<li class="treeview"><a href="admin-book.jsp"> <i
@@ -195,7 +193,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 									<li><a href="typography.html"><i
 											class="fa fa-angle-right"></i> Typography</a></li>
 								</ul></li>
-							
+
 						</ul>
 					</div>
 					<!-- /.navbar-collapse -->
@@ -206,7 +204,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 
 		<!-- header-starts -->
 		<div class="sticky-header header-section ">
-			
+
 			<div class="header-right">
 				<!--search-box-->
 				<div class="search-box">
@@ -255,66 +253,55 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 		</div>
 		<!-- //header-ends -->
 		<!-- main content start-->
+
 		<div id="page-wrapper">
 			<div class="main-page">
-				<div class="mt-15">
-					<div class="col-md-3 widget widget1">
-						<div class="r3_counter_box">
-							<i class="pull-left fa fa-dollar icon-rounded"></i>
-							<div class="stats">
-								<h5>
-								<%List<ServiceMan> list = ServicemanDao.getAllServiceMan(); %>
-									<strong><%=list.size() %></strong>
-								</h5>
-								<span>All ServiceMan</span>
-							</div>
-						</div>
+				<div class="tables">
+					<div class="table-responsive bs-example widget-shadow">
+						<h4>Service Man :</h4>
+						<table class="table table-bordered">
+							<thead>
+								<tr>
+									<th>Id</th>
+									<th>Name</th>
+									<th>Contact</th>
+									<th>Address</th>
+									<th>Service Type</th>
+									<th>Email</th>
+									<th>Edit</th>
+									<th>Delete</th>
+								</tr>
+							</thead>
+							<tbody>
+							<%List<ServiceMan> list = ServicemanDao.getAllServiceMan();%>
+							<%for(ServiceMan s:list){ %>
+								<tr>
+									<th scope="row"><%=s.getId() %></th>
+									<td><%=s.getName() %></td>
+									<td><%=s.getContact() %></td>
+									<td><%=s.getAddress() %></td>
+									<td><%=s.getStype() %></td>
+									<td><%=s.getEmail() %></td>
+									<td>
+										<form>
+											<input type ="submit" name="action" value="edit">
+										</form>
+									</td>
+									<td>
+										<form>
+											<input type ="submit" name="action" value="delete">
+										</form>
+									</td>
+								</tr>
+								<%} %>
+							</tbody>
+						</table>
 					</div>
-					<div class="col-md-3 widget widget1">
-						<div class="r3_counter_box">
-							<i class="pull-left fa fa-laptop user1 icon-rounded"></i>
-							<div class="stats">
-								<h5>
-								<%List<Customer> clist = CustomerDao.getAllCustomer(); %>
-									<strong><%=clist.size() %></strong>
-								</h5>
-								<span>All Customers</span>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3 widget widget1">
-						<div class="r3_counter_box">
-							<i class="pull-left fa fa-money user2 icon-rounded"></i>
-							<div class="stats">
-								<h5>
-								<%List<BookService> blist = BookingDao.getAllBookedServices(); %>
-									<strong><%=blist.size() %></strong>
-								</h5>
-								<span>Booked Services</span>
-							</div>
-						</div>
-					</div>
-				
-					<div class="clearfix"></div>
 				</div>
-
-
-				<!-- for amcharts js -->
-				<script src="js/amcharts.js"></script>
-				<script src="js/serial.js"></script>
-				<script src="js/export.min.js"></script>
-				<link rel="stylesheet" href="css/export.css" type="text/css"
-					media="all" />
-				<script src="js/light.js"></script>
-				<!-- for amcharts js -->
-
-				<script src="js/index1.js"></script>
-
-				
-			
-
 			</div>
 		</div>
+
+
 		<!--footer-->
 		<div class="footer">
 			<p>
@@ -327,8 +314,8 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 
 	<!-- new added graphs chart js-->
 
-	<script src="admin/js/Chart.bundle.js"></script>
-	<script src="admin/js/utils.js"></script>
+	<script src="js/Chart.bundle.js"></script>
+	<script src="js/utils.js"></script>
 
 	<script>
 		var MONTHS = [ "January", "February", "March", "April", "May", "June",
@@ -466,7 +453,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 
 	<!-- Classie -->
 	<!-- for toggle left push menu script -->
-	<script src="admin/js/classie.js"></script>
+	<script src="js/classie.js"></script>
 	<script>
 		var menuLeft = document.getElementById('cbp-spmenu-s1'), showLeftPush = document
 				.getElementById('showLeftPush'), body = document.body;
@@ -488,19 +475,19 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 	<!-- //for toggle left push menu script -->
 
 	<!--scrolling js-->
-	<script src="admin/js/jquery.nicescroll.js"></script>
-	<script src="admin/js/scripts.js"></script>
+	<script src="js/jquery.nicescroll.js"></script>
+	<script src="js/scripts.js"></script>
 	<!--//scrolling js-->
 
 	<!-- side nav js -->
-	<script src='admin/js/SidebarNav.min.js' type='text/javascript'></script>
+	<script src='js/SidebarNav.min.js' type='text/javascript'></script>
 	<script>
 		$('.sidebar-menu').SidebarNav()
 	</script>
 	<!-- //side nav js -->
 
 	<!-- for index page weekly sales java script -->
-	<script src="admin/js/SimpleChart.js"></script>
+	<script src="js/SimpleChart.js"></script>
 	<script>
 		var graphdata1 = {
 			linecolor : "#CCA300",
@@ -950,7 +937,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 
 
 	<!-- Bootstrap Core JavaScript -->
-	<script src="admin/js/bootstrap.js">
+	<script src="js/bootstrap.js">
 		
 	</script>
 	<!-- //Bootstrap Core JavaScript -->

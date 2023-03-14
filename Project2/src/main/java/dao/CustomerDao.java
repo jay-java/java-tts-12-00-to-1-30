@@ -3,9 +3,12 @@ package dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 import connection.DBConnection;
 import model.Customer;
+import model.ServiceMan;
 
 public class CustomerDao {
 	public static void insertCustomer(Customer c) {
@@ -55,11 +58,11 @@ public class CustomerDao {
 		Customer c1 = null;
 		try {
 			Connection con = DBConnection.createConnection();
-			String sql="select * from customer where id=?";
+			String sql = "select * from customer where id=?";
 			PreparedStatement pst = con.prepareStatement(sql);
 			pst.setInt(1, id);
 			ResultSet rs = pst.executeQuery();
-			if(rs.next()) {
+			if (rs.next()) {
 				c1 = new Customer();
 				c1.setId(rs.getInt("id"));
 				c1.setName(rs.getString("name"));
@@ -72,6 +75,27 @@ public class CustomerDao {
 			e.printStackTrace();
 		}
 		return c1;
+	}
+	public static List<Customer> getAllCustomer() {
+		List<Customer> list = new ArrayList<Customer>();
+		try {
+			Connection conn = DBConnection.createConnection();
+			String sql = "select * from customer";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			ResultSet rs = pst.executeQuery();
+			while (rs.next()) {
+				Customer s1 = new Customer();
+				s1.setId(rs.getInt("id"));
+				s1.setName(rs.getString("name"));
+				s1.setContact(rs.getLong("contact"));
+				s1.setAddress(rs.getString("address"));
+				s1.setEmail(rs.getString("email"));
+				s1.setPassword(rs.getString("password"));
+				list.add(s1);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-
+		return list;
+	}
 }

@@ -88,4 +88,29 @@ public class BookingDao {
 		}
 		return list;
 	}
+	
+	
+	public static List<BookService> getAllBookedServices(){
+		List<BookService> list = new ArrayList<BookService>();
+		try {
+			Connection conn = DBConnection.createConnection();
+			String sql ="select * from book_services";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			ResultSet rs = pst.executeQuery();
+			while(rs.next()) {
+				BookService b = new BookService();
+				b.setBid(rs.getInt("bid"));
+				b.setCid(rs.getInt("cid"));
+				b.setSid(rs.getInt("sid"));
+				b.setSname(rs.getString("sname"));
+				b.setSemail(rs.getString("semail"));
+				b.setStype(rs.getString("stype"));
+				b.setStatus(rs.getString("status"));
+				list.add(b);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
 }
