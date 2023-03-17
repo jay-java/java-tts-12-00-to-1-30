@@ -283,13 +283,12 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 									<td><%=s.getStype() %></td>
 									<td><%=s.getEmail() %></td>
 									<td>
-										<form>
-											<input type ="submit" name="action" value="edit">
-										</form>
+										<a href="admin-serviceman-edit.jsp?id=<%=s.getId()%>">Edit</a>
 									</td>
 									<td>
-										<form>
-											<input type ="submit" name="action" value="delete">
+										<form action="AdminController" method="post">
+										<input type="hidden" name="id" value="<%=s.getId()%>">
+											<input type ="submit" name="action" value="delete serviceman">
 										</form>
 									</td>
 								</tr>

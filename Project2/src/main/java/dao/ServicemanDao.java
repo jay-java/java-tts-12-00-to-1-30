@@ -162,4 +162,16 @@ public class ServicemanDao {
 		}
 		return s1;
 	}
+	public static void deleteServiceman(int id) {
+		try {
+			Connection conn = DBConnection.createConnection();
+			String sql = "delete from serviceman where id=?";
+			PreparedStatement pst = conn.prepareStatement(sql);
+			pst.setInt(1, id);
+			pst.executeUpdate();
+			System.out.println("serviceman deleted");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }

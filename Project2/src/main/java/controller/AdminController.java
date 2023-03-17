@@ -8,7 +8,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import dao.ServicemanDao;
 import model.Admin;
+import model.ServiceMan;
 
 /**
  * Servlet implementation class AdminController
@@ -53,6 +55,22 @@ public class AdminController extends HttpServlet {
 				request.setAttribute("msg", "email or password is incorrect");
 				request.getRequestDispatcher("admin-login.jsp").forward(request, response);
 			}
+		}
+		else if(action.equalsIgnoreCase("update serviceman")) {
+			ServiceMan s = new ServiceMan();
+			s.setId(Integer.parseInt(request.getParameter("id")));
+			s.setName(request.getParameter("name"));
+			s.setContact(Long.parseLong(request.getParameter("contact")));
+			s.setAddress(request.getParameter("address"));
+			s.setStype(request.getParameter("stype"));
+			s.setEmail(request.getParameter("email"));
+			ServicemanDao.updateProfile(s);
+			response.sendRedirect("admin-serviceman-list.jsp");
+		}
+		else if(action.equalsIgnoreCase("delete serviceman")) {
+			int id = Integer.parseInt(request.getParameter("id"));
+			ServicemanDao.deleteServiceman(id);
+			response.sendRedirect("admin-serviceman-list.jsp");
 		}
 	}
 

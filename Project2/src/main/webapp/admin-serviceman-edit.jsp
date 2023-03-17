@@ -25,7 +25,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 <script type="application/x-javascript">
 	
+	
+	
 	 addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
+
+
 
 </script>
 
@@ -169,8 +173,8 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 							<li class="treeview"><a href="admin-index.jsp"> <i
 									class="fa fa-dashboard"></i> <span>Dashboard</span>
 							</a></li>
-							<li class="treeview"><a href="admin-serviceman-list.jsp"> <i
-									class="fa fa-laptop"></i> <span>Service-Man</span> 
+							<li class="treeview"><a href="admin-serviceman-list.jsp">
+									<i class="fa fa-laptop"></i> <span>Service-Man</span>
 							</a>
 								<ul class="treeview-menu">
 									<li><a href="grids.html"><i class="fa fa-angle-right"></i>
@@ -178,8 +182,8 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 									<li><a href="media.html"><i class="fa fa-angle-right"></i>
 											Media Css</a></li>
 								</ul></li>
-							<li class="treeview"><a href="admin-customer-list.jsp"> <i
-									class="fa fa-pie-chart"></i> <span>Customers</span> 
+							<li class="treeview"><a href="admin-customer-list.jsp">
+									<i class="fa fa-pie-chart"></i> <span>Customers</span>
 							</a></li>
 							<li class="treeview">
 							<li class="treeview"><a href="admin-book.jsp"> <i
@@ -195,7 +199,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 									<li><a href="typography.html"><i
 											class="fa fa-angle-right"></i> Typography</a></li>
 								</ul></li>
-							
+
 						</ul>
 					</div>
 					<!-- /.navbar-collapse -->
@@ -206,7 +210,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 
 		<!-- header-starts -->
 		<div class="sticky-header header-section ">
-			
+
 			<div class="header-right">
 				<!--search-box-->
 				<div class="search-box">
@@ -255,64 +259,55 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 		</div>
 		<!-- //header-ends -->
 		<!-- main content start-->
+
 		<div id="page-wrapper">
-			<div class="main-page">
-				<div class="mt-15">
-					<div class="col-md-3 widget widget1">
-						<div class="r3_counter_box">
-							<i class="pull-left fa fa-dollar icon-rounded"></i>
-							<div class="stats">
-								<h5>
-								<%List<ServiceMan> list = ServicemanDao.getAllServiceMan(); %>
-									<strong><%=list.size() %></strong>
-								</h5>
-								<span>All ServiceMan</span>
-							</div>
+			<div class="main-page signup-page">
+				<h2 class="title1">SignUp Here</h2>
+				<div class="sign-up-row widget-shadow">
+					<h5>Personal Information :</h5>
+					<%
+					int id = Integer.parseInt(request.getParameter("id"));
+					%>
+					<%
+					ServiceMan s = ServicemanDao.getServicemanById(id);
+					%>
+					<form action="AdminController" method="post">
+						<div class="sign-u">
+							<input type="text" name="id" value="<%=s.getId()%>">
+							<div class="clearfix"></div>
 						</div>
-					</div>
-					<div class="col-md-3 widget widget1">
-						<div class="r3_counter_box">
-							<i class="pull-left fa fa-laptop user1 icon-rounded"></i>
-							<div class="stats">
-								<h5>
-								<%List<Customer> clist = CustomerDao.getAllCustomer(); %>
-									<strong><%=clist.size() %></strong>
-								</h5>
-								<span>All Customers</span>
-							</div>
+						<div class="sign-u">
+							<input type="text" name="name" value="<%=s.getName()%>">
+							<div class="clearfix"></div>
 						</div>
-					</div>
-					<div class="col-md-3 widget widget1">
-						<div class="r3_counter_box">
-							<i class="pull-left fa fa-money user2 icon-rounded"></i>
-							<div class="stats">
-								<h5>
-								<%List<BookService> blist = BookingDao.getAllBookedServices(); %>
-									<strong><%=blist.size() %></strong>
-								</h5>
-								<span>Booked Services</span>
-							</div>
+						<div class="sign-u">
+							<input type="text" name="contact" value="<%=s.getContact()%>">
+							<div class="clearfix"></div>
 						</div>
-					</div>
-				
-					<div class="clearfix"></div>
+						<div class="sign-u">
+							<input type="text" name="address" value="<%=s.getAddress()%>">
+							<div class="clearfix"></div>
+						</div>
+						<div class="sign-u">
+							<input type="text" name="stype" value="<%=s.getStype()%>">
+							<div class="clearfix"></div>
+						</div>
+						<div class="sign-u">
+							<input type="text" name="email" value="<%=s.getEmail()%>">
+							<div class="clearfix"></div>
+						</div>
+
+
+						<div class="sub_home">
+							<input type="submit" name="action" value="update serviceman">
+							<div class="clearfix"></div>
+						</div>
+
+					</form>
 				</div>
-
-
-				<!-- for amcharts js -->
-				<script src="js/amcharts.js"></script>
-				<script src="js/serial.js"></script>
-				<script src="js/export.min.js"></script>
-				<link rel="stylesheet" href="css/export.css" type="text/css"
-					media="all" />
-				<script src="js/light.js"></script>
-				<!-- for amcharts js -->
-
-				<script src="js/index1.js"></script>
-
-				
 			</div>
 		</div>
+
 		<!--footer-->
 		<div class="footer">
 			<p>
